@@ -1,0 +1,71 @@
+{
+	"kind": "swagger",
+	"spec ": "1.0.0",
+	"entities": [
+		"colores"
+	],
+	"paths": {
+		"colores": {
+			"": {
+				"get": {
+					"description": "Entities list",
+					"tags": [
+						"color"
+					]
+				},
+				"put": {
+					"description": "Create an entity",
+					"tags": [
+						"color"
+					]
+				}
+			},
+			"{id}": {
+				"get": {
+					"description": "Show entity info",
+					"tags": [
+						"color"
+					]
+				},
+				"delete": {
+					"description": "Delete an entity",
+					"tags": [
+						"color"
+					]
+				},
+				"patch": {
+					"description": "Update an entity",
+					"tags": [
+						"color"
+					]
+				}
+			}
+		}
+	},
+	"metadata": {
+		"info": {
+			"title": "Colores demo",
+			"description": "Sample application",
+			"license": {
+				"name": "Apache 2.0",
+				"url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+			}
+		},
+		"externalDocs": {
+			"description": "Find out more about Aguacate",
+			"url": "https://sourceforge.net/projects/aguacate/"
+		},
+		"tags": [
+			{
+				"name": "color",
+				"description": "Color operations"
+			}
+		],
+		"servers": [
+			{
+				"url": "http://localhost:18081/",
+				"description": "Demo app"
+			}
+		]
+	}
+}

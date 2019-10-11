@@ -1,0 +1,19 @@
+{
+	"vendor": "mysql",
+	"properties": {
+		"jdbcUrl": "jdbc:mariadb://db/cenicienta",
+		"username": "cenicienta",
+		"password": "cenicienta",
+		"driverClassName": "org.mariadb.jdbc.Driver",
+		"dataSource.cachePrepStmts": "true",
+		"dataSource.prepStmtCacheSize": "250",
+		"dataSource.prepStmtCacheSqlLimit": "2048",
+		"dataSource.useServerPrepStmts": "true",
+		"dataSource.useLocalSessionState": "true",
+		"dataSource.rewriteBatchedStatements": "true",
+		"dataSource.cacheResultSetMetadata": "true",
+		"dataSource.cacheServerConfiguration": "true",
+		"dataSource.elideSetAutoCommits": "true",
+		"dataSource.maintainTimeStats": "false"
+	}
+}

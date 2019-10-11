@@ -1,0 +1,11 @@
+FROM razzek/aguacate-swagger:latest
+
+RUN curl -sSL -o "$CATALINA_HOME/webapps/ROOT/WEB-INF/lib/mariadb-java-client-2.5.0.jar" https://repo1.maven.org/maven2/org/mariadb/jdbc/mariadb-java-client/2.5.0/mariadb-java-client-2.5.0.jar \
+ && echo "819742c86ddcd66c3e0263ee16a86cdc896edfc1  $CATALINA_HOME/webapps/ROOT/WEB-INF/lib/mariadb-java-client-2.5.0.jar" | sha1sum -c
+
+COPY web.xml $CATALINA_HOME/webapps/ROOT/WEB-INF/
+
+COPY database/* /var/lib/aguacate/database/
+COPY script/* /var/lib/aguacate/script/
+COPY configuration/* /var/lib/aguacate/configuration/
+COPY swagger/* /var/lib/aguacate/swagger/

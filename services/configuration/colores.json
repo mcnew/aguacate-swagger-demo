@@ -1,0 +1,229 @@
+{
+	"primary": "id",
+	"datasource": "laser",
+	"fields": {
+		"id": {
+			"type": "INTEGER",
+			"minval": "1",
+			"maxval": "2147483647",
+			"input": {
+				"GET": {
+					"mandatory": true
+				},
+				"PATCH": {
+					"mandatory": true
+				},
+				"DELETE": {
+					"mandatory": true
+				}
+			},
+			"output": [
+				"GET",
+				"GET0"
+			]
+		},
+		"name": {
+			"type": "STRING",
+			"minlen": "2",
+			"maxlen": "10",
+			"regex": "^[a-zA-Z]+$",
+			"input": {
+				"PUT": {
+					"mandatory": true
+				}
+			},
+			"output": [
+				"GET",
+				"GET0"
+			]
+		},
+		"description": {
+			"type": "STRING",
+			"minlen": "5",
+			"maxlen": "20",
+			"regex": "^[a-zA-Z 0-9]+$",
+			"input": {
+				"PUT": {
+					"mandatory": false
+				},
+				"PATCH": {
+					"mandatory": false
+				}
+			},
+			"output": [
+				"GET"
+			]
+		},
+		"date": {
+			"type": "DYNAMIC_DATE",
+			"minval": "TODAY",
+			"maxval": "FUTURE",
+			"input": {
+				"PUT": {
+					"mandatory": true
+				},
+				"PATCH": {
+					"mandatory": false
+				}
+			},
+			"output": [
+				"GET",
+				"GET0"
+			]
+		},
+		"startTime": {
+			"type": "TIME",
+			"minval": "08:00:00.000",
+			"maxval": "20:59:59.999",
+			"input": {
+				"PUT": {
+					"mandatory": true
+				},
+				"PATCH": {
+					"mandatory": false
+				}
+			},
+			"output": [
+				"GET"
+			]
+		},
+		"endTime": {
+			"type": "TIME",
+			"minval": "08:00:00.000",
+			"maxval": "20:59:59.999",
+			"input": {
+				"PUT": {
+					"mandatory": true
+				},
+				"PATCH": {
+					"mandatory": false
+				}
+			},
+			"output": [
+				"GET"
+			]
+		}
+	},
+	"validations": [
+		{
+			"name": "TIMES_COMPARATION",
+			"message": "compairson of startTime and endTime",
+			"type": "LT",
+			"parameters": [
+				"startTime",
+				"endTime"
+			],
+			"methods": [
+				"PUT"
+			]
+		},
+		{
+			"name": "DATE_IN_RANGE",
+			"message": "check date int range",
+			"type": "GT_TODAY",
+			"parameters": [
+				"date"
+			],
+			"methods": [
+				"PUT"
+			]
+		},
+		{
+			"name": "SELECT_NAME",
+			"message": "name selection",
+			"type": "SELECT_SINGLE",
+			"table": "color",
+			"parameters": [
+				"id"
+			],
+			"outputName": "name",
+			"methods": [
+				"PATCH"
+			]
+		},
+		{
+			"name": "NAME_DESCRIPTION",
+			"message": "description validation",
+			"type": "SCRIPT",
+			"scriptName" : "colores1",
+			"functionName": "validation1",
+			"parameters": [
+				"name",
+				"description"
+			],
+			"methods": [
+				"PUT",
+				"PATCH"
+			]
+		}
+	],
+	"sentences": [
+		{
+			"name": "NEW",
+			"type": "INSERT",
+			"message": "Insert color {0}",
+			"table": "color",
+			"required": [
+				"name",
+				"date",
+				"startTime",
+				"endTime"
+			],
+			"optional": [
+				"description"
+			],
+			"methods": [
+				"PUT"
+			]
+		},
+		{
+			"name": "UPDATE",
+			"type": "UPDATE",
+			"message": "Update color {0}",
+			"table": "color",
+			"required": [
+				"id"
+			],
+			"optional": [
+				"description"
+			],
+			"methods": [
+				"PATCH"
+			]
+		},
+		{
+			"name": "SELECT_ONE",
+			"type": "SELECT_SINGLE_ROW",
+			"message": "Selection of detail's color {0}",
+			"table": "color",
+			"required": [
+				"id"
+			],
+			"optional": [
+				"name",
+				"description",
+				"date",
+				"startTime",
+				"endTime"
+			],
+			"methods": [
+				"GET"
+			]
+		},
+		{
+			"name": "SELECT_ALL",
+			"type": "SELECT_MULTIPLE_ROW",
+			"message": "Selection of all colors",
+			"table": "color",
+			"required": [],
+			"optional": [
+				"id",
+				"name",
+				"date"
+			],
+			"methods": [
+				"GET0"
+			]
+		}
+	]
+}

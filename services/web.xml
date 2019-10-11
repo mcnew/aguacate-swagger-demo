@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+
+	<display-name>aguacate swagger</display-name>
+
+	<servlet>
+		<display-name>Oauth2 Aguacate Login Servlet</display-name>
+		<servlet-name>Oauth2AguacateLoginServlet</servlet-name>
+		<servlet-class>net.sf.aguacate.filter.security.oauth2.Oauth2LoginServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<display-name>Oauth2 Aguacate Profile Servlet</display-name>
+		<servlet-name>Oauth2ProfileServlet</servlet-name>
+		<servlet-class>net.sf.aguacate.filter.security.oauth2.Oauth2ProfileServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<display-name>Oauth2 Callback Aguacate Login Servlet</display-name>
+		<servlet-name>Oauth2CallbackLoginServlet</servlet-name>
+		<servlet-class>net.sf.aguacate.filter.security.oauth2.Oauth2CallbackLoginServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<display-name>Aguacate Servlet</display-name>
+		<servlet-name>AguacateServlet</servlet-name>
+		<servlet-class>net.sf.aguacate.AguacateServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<display-name>Aguacate Swagger Servlet</display-name>
+		<servlet-name>AguacateSwaggerServlet</servlet-name>
+		<servlet-class>net.sf.aguacate.swagger.AguacateSwaggerServlet</servlet-class>
+	</servlet>
+
+	<filter>
+		<display-name>StaticHeadersFilter</display-name>
+		<filter-name>StaticHeadersFilter</filter-name>
+		<filter-class>net.sf.aguacate.util.filter.StaticHeadersFilter</filter-class>
+		<init-param>
+			<param-name>Access-Control-Allow-Origin</param-name>
+			<param-value>*</param-value>
+		</init-param>
+		<init-param>
+			<param-name>Access-Control-Allow-Method</param-name>
+			<param-value>GET, HEAD, POST, DELETE, PUT, PATCH, OPTIONS</param-value>
+		</init-param>
+	</filter>
+
+	<filter>
+		<display-name>Aguacate Security Filter</display-name>
+		<filter-name>AguacateSecurityFilter</filter-name>
+		<filter-class>net.sf.aguacate.filter.SecurityFilter</filter-class>
+	</filter>
+
+	<servlet-mapping>
+		<servlet-name>Oauth2AguacateLoginServlet</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Oauth2ProfileServlet</servlet-name>
+		<url-pattern>/profile</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Oauth2CallbackLoginServlet</servlet-name>
+		<url-pattern>/logincallback</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>AguacateSwaggerServlet</servlet-name>
+		<url-pattern>*.yaml</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>AguacateServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<filter-mapping>
+		<filter-name>StaticHeadersFilter</filter-name>
+		<servlet-name>AguacateServlet</servlet-name>
+		<servlet-name>AguacateSwaggerServlet</servlet-name>
+	</filter-mapping>
+
+</web-app>

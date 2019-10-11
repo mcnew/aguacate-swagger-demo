@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   db:
-    build: mariadb-demo
+    build: db
     environment:
       - MYSQL_ROOT_PASSWORD=my-secret-pw
       - MYSQL_DATABASE=cenicienta
@@ -18,7 +18,7 @@ services:
     depends_on:
       - aguacate
   aguacate:
-    build: aguacate-swagger-demo
+    build: services
     ports:
       - "8081:8080"
     depends_on:

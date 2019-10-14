@@ -5,7 +5,7 @@ RUN curl -sSL -o "$CATALINA_HOME/webapps/ROOT/WEB-INF/lib/mariadb-java-client-2.
 
 COPY web.xml $CATALINA_HOME/webapps/ROOT/WEB-INF/
 
-COPY database/* /var/lib/aguacate/database/
-COPY script/* /var/lib/aguacate/script/
-COPY configuration/* /var/lib/aguacate/configuration/
-COPY swagger/* /var/lib/aguacate/swagger/
+COPY database/* $DIRECTORY_DATABASE/
+COPY script/* $DIRECTORY_SCRIPT/
+COPY configuration/* $DIRECTORY_CONFIGURATION/
+COPY swagger/* $DIRECTORY_SWAGGER/

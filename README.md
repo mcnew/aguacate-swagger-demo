@@ -21,17 +21,17 @@ You can view swagger interface visiting http://localhost:18080 in a browser
 In docker-compose.yml 3 services are declared
 
 - db: That is a [mariadb](https://hub.docker.com/_/mariadb) instance, with just one table on the `cenicienta` schema:
-```sql
-CREATE TABLE color (
-	  id int(11) NOT NULL AUTO_INCREMENT,
-	  name varchar(50),
-	  description varchar(100),
-	  date date,
-	  startTime time,
-	  endTime time,
-	  PRIMARY KEY (id)
-);
-```
+  ```sql
+  CREATE TABLE color (
+    id int(11) NOT NULL AUTO_INCREMENT,
+    name varchar(50),
+    description varchar(100),
+    date date,
+    startTime time,
+    endTime time,
+    PRIMARY KEY (id)
+  );
+  ```
 - swagger: That is a [swagger-ui](https://hub.docker.com/r/swaggerapi/swagger-ui/) instance, pointing to `http://localhost:18081/colorante.yaml`
 - aguacate: An aguacate-swagger instance uses 4 files
 

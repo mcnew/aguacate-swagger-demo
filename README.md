@@ -20,7 +20,7 @@ You can view swagger interface visiting http://localhost:18080 in a browser
 # How it works
 In docker-compose.yml 3 services are declared
 
-- db: That is a [mariadb](https://hub.docker.com/_/mariadb) instance, with just one table:
+- db: That is a [mariadb](https://hub.docker.com/_/mariadb) instance, with just one table on the `cenicienta` schema:
 ```sql
 CREATE TABLE color (
 	  id int(11) NOT NULL AUTO_INCREMENT,

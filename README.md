@@ -18,17 +18,22 @@ $ docker-compose up -d
 You can view swagger interface visiting http://localhost:18080 in a browser
 
 # How it works
-The docker-compose file declares 3 services
+In docker-compose.yml 3 services are declared
 
-- db: is a [mariadb](https://hub.docker.com/_/mariadb) instance, with justo one table (color) and the following columns:
-  * id
-  * name
-  * description
-  * date
-  * startTime
-  * endTime
-- swagger: is a [swagger-ui](https://hub.docker.com/r/swaggerapi/swagger-ui/) instance
-- aguacate: an aguacate-swagger instance
+- db: That is a [mariadb](https://hub.docker.com/_/mariadb) instance, with just one table:
+```sql
+CREATE TABLE color (
+	  id int(11) NOT NULL AUTO_INCREMENT,
+	  name varchar(50),
+	  description varchar(100),
+	  date date,
+	  startTime time,
+	  endTime time,
+	  PRIMARY KEY (id)
+);
+```
+- swagger: That is a [swagger-ui](https://hub.docker.com/r/swaggerapi/swagger-ui/) instance, pointing to `http://localhost:18081/colorante.yaml`
+- aguacate: An aguacate-swagger instance
 
 # License
 View [license information](https://www.apache.org/licenses/LICENSE-2.0) for the software contained in this image.

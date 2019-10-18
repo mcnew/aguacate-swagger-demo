@@ -9,6 +9,8 @@ services:
       - MYSQL_PASSWORD=cenicienta
     volumes:
       - db-data:/var/lib/mysql
+    networks:
+      - aguacate-demo
   swagger:
     image: swaggerapi/swagger-ui:latest
     ports:
@@ -17,12 +19,16 @@ services:
       - URL=http://localhost:18081/colorante.yaml
     depends_on:
       - aguacate
+    networks:
+      - aguacate-demo
   aguacate:
     build: services
     ports:
       - "18081:8080"
     depends_on:
       - db
+    networks:
+      - aguacate-demo
 volumes:
   db-data:
 networks:

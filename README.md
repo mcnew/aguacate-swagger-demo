@@ -7,7 +7,7 @@ Pre-requisites:
 ```shell
 $ git clone https://github.com/mcnew/aguacate-swagger-demo.git aguacate-swagger-demo
 $ cd aguacate-swagger-demo
-$ docker-compose run -d
+$ docker-compose up -d
 ```
 
 You can test it by visiting http://localhost:18080 in a browser

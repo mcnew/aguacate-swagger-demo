@@ -1,7 +1,8 @@
 # How to use this project
 
 ## Pre-requisites:
-- Install docker-compose ([official](https://docs.docker.com/compose/install))
+- Install docker ([Install Docker](https://docs.docker.com/install/))
+- Install docker-compose ([Install Docker Compose](https://docs.docker.com/compose/install))
 - Have ports 18080 and 18081 available on localhost
 
 ## Run demo

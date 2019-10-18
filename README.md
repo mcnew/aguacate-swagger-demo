@@ -36,9 +36,17 @@ CREATE TABLE color (
 - aguacate: An aguacate-swagger instance uses 4 files
 
   * services/configuration/colores.json
+
+    This file contains the definition of the colores `REST` endpoint
   * services/database/laser.json
+
+    *datasource* definition, references to `db` service via jdbc (`jdbc:mariadb://db/cenicienta`)
   * services/script/colores1.js
+
+    Definition of unamed object with a function `validation1`, referenced in colores.json.
   * services/swagger/colorante.json
+
+    Swagger auxiliar file.
 
 # License
 View [license information](https://www.apache.org/licenses/LICENSE-2.0) for the software contained in this image.

@@ -33,7 +33,12 @@ CREATE TABLE color (
 );
 ```
 - swagger: That is a [swagger-ui](https://hub.docker.com/r/swaggerapi/swagger-ui/) instance, pointing to `http://localhost:18081/colorante.yaml`
-- aguacate: An aguacate-swagger instance
+- aguacate: An aguacate-swagger instance uses 4 files
+
+  * services/configuration/colores.json
+  * services/database/laser.json
+  * services/script/colores1.js
+  * services/swagger/colorante.json
 
 # License
 View [license information](https://www.apache.org/licenses/LICENSE-2.0) for the software contained in this image.

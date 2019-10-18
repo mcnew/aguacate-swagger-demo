@@ -1,9 +1,12 @@
-# How to use this image
+[TOC]
 
-Pre-requisites:
+# How to use this project
+
+## Pre-requisites:
 - Install docker-compose ([official](https://docs.docker.com/compose/install))
 - Have ports 18080 and 18081 available on localhost
 
+## Run dmeo
 ```shell
 $ git clone https://github.com/mcnew/aguacate-swagger-demo.git aguacate-swagger-demo
 $ cd aguacate-swagger-demo

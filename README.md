@@ -1,5 +1,3 @@
-[TOC]
-
 # How to use this project
 
 ## Pre-requisites:

@@ -4,14 +4,14 @@
 - Install docker-compose ([official](https://docs.docker.com/compose/install))
 - Have ports 18080 and 18081 available on localhost
 
-## Run dmeo
+## Run demo
 ```shell
 $ git clone https://github.com/mcnew/aguacate-swagger-demo.git aguacate-swagger-demo
 $ cd aguacate-swagger-demo
 $ docker-compose up -d
 ```
 
-You can test it by visiting http://localhost:18080 in a browser
+You can view swagger interface visiting http://localhost:18080 in a browser
 
 # License
 View [license information](https://www.apache.org/licenses/LICENSE-2.0) for the software contained in this image.

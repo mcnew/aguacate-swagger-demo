@@ -29,6 +29,11 @@ services:
       - db
     networks:
       - aguacate-demo
+    volumes:
+      - "./services/configuration:/var/lib/aguacate/configuration"
+      - "./services/script:/var/lib/aguacate/script"
+      - "./services/database:/var/lib/aguacate/database"
+      - "./services/swagger:/var/lib/aguacate/swagger"
 volumes:
   db-data:
 networks:

@@ -1,7 +1,8 @@
+"use strict";
 (function() {
 	return {
 		validation1 : function(name, description) {
-			if (description !== null && description.indexOf(name) >= 0) {
+			if (description === null || description.indexOf(name) >= 0) {
 				return {
 					value : 'success'
 				};

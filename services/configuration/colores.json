@@ -185,7 +185,9 @@
 				"id"
 			],
 			"optional": [
-				"description"
+				"description",
+				"startTime",
+				"endTime"
 			],
 			"methods": [
 				"PATCH"

@@ -3,20 +3,20 @@ index 00bd8b8..9ded5a9 100644
 --- a/services/configuration/colores.json
 +++ b/services/configuration/colores.json
 @@ -51,7 +51,8 @@
-                                }
-                        },
-                        "output": [
--                               "GET"
-+                               "GET",
-+                               "GET0"
-                        ]
-                },
-                "date": {
+ 				}
+ 			},
+ 			"output": [
+-				"GET"
++				"GET",
++				"GET0"
+ 			]
+ 		},
+ 		"date": {
 @@ -221,6 +222,7 @@
-                        "optional": [
-                                "id",
-                                "name",
-+                               "description",
-                                "date"
-                        ],
-                        "methods": [
+ 			"optional": [
+ 				"id",
+ 				"name",
++				"description",
+ 				"date"
+ 			],
+ 			"methods": [

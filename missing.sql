@@ -1,0 +1,2 @@
+ALTER TABLE `color`
+	ADD COLUMN `missing` VARCHAR(50) NULL DEFAULT NULL AFTER `endTime`;

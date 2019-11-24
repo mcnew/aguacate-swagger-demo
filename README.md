@@ -69,7 +69,7 @@ Server response
 
 ### List all elements
 
-Just expand the [GET /colores](http://localhost:18080/#/color/get_colores), click on "Try it out", click on execute, to get data like this
+Expand the [GET /colores](http://localhost:18080/#/color/get_colores), click on "Try it out", click on execute, to get data like this
 
 ```json
 [
@@ -79,6 +79,22 @@ Just expand the [GET /colores](http://localhost:18080/#/color/get_colores), clic
     "id": "1"
   }
 ]
+```
+
+### Get all the data from one element
+
+Expand the [GET /colores/{id}](http://localhost:18080/#/color/get_colores__id_), click on "Try it out"
+
+Enter the number 1 in the box of parameter id and click on execute.
+
+```json
+{
+  "date": "2025-11-24",
+  "name": "alpha",
+  "description": "alpha is a letter",
+  "startTime": "13:00:00.000",
+  "endTime": "14:00:00.000"
+}
 ```
 
 ### How it works

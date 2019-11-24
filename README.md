@@ -161,6 +161,16 @@ $ git apply colores-description.patch
 Or using [TortoiseGit](https://tortoisegit.org/docs/tortoisegit/tgit-dug-patch.html)
 
 4. Refresh the definition, using the `Explore` button on top of page.
+5. See the modified version of [GET /colores](http://localhost:18080/#/color/get_colores), now with the new definition
+```json
+{
+  "id": 0,
+  "name": "string",
+  "date": "2019-11-24",
+  "description": "string"
+}
+```
+6. See the result executing the Operation.
 
 # License
 View [license information](https://www.apache.org/licenses/LICENSE-2.0) for the software contained in this image.

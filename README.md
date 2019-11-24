@@ -17,7 +17,7 @@ $ docker-compose up -d
 
 You can view swagger interface visiting http://localhost:18080 in a browser
 
-# How it works
+### How it works
 In docker-compose.yml 3 services are declared
 
 - db: That is a [mariadb](https://hub.docker.com/_/mariadb) instance, with just one table on the `cenicienta` schema:
@@ -48,9 +48,20 @@ In docker-compose.yml 3 services are declared
 
     Swagger auxiliar file.
 
-## Add new REST service
+### Modify existing REST service
 
-Under construction
+Objective, add a new column to /colores with method GET
+
+1. Visit the swagger interface `http://localhost:18081/colorante.yaml`
+2. Check the current description of /colores as GET (http://localhost:18080/#/color/get_colores)
+    In code 200 the example value is:
+```json
+{
+  "id": 0,
+  "name": "string",
+  "date": "2019-11-24"
+}
+```
 
 # License
 View [license information](https://www.apache.org/licenses/LICENSE-2.0) for the software contained in this image.

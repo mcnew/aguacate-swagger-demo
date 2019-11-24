@@ -56,16 +56,7 @@ Click on "Try it out" button, and replace the body with the following data
 }
 ```
 
-And click on execute.
-
-Server response
-
-    Code: 201
-
-    Response headers: 
-
-        access-control-allow-origin: *
-        content-length: *
+And click on execute. The server status code is 201
 
 ### List all elements
 
@@ -81,9 +72,11 @@ Expand the [GET /colores](http://localhost:18080/#/color/get_colores), click on 
 ]
 ```
 
+And click on execute. The server status code is 200
+
 ### Get all the data from one element
 
-Expand the [GET /colores/{id}](http://localhost:18080/#/color/get_colores__id_), click on "Try it out"
+Expand the [GET /colores/{id}](http://localhost:18080/#/color/get_colores__id_), click on "Try it out".
 
 Enter the number 1 in the box of parameter id and click on execute.
 
@@ -96,6 +89,22 @@ Enter the number 1 in the box of parameter id and click on execute.
   "endTime": "14:00:00.000"
 }
 ```
+
+And click on execute. The server status code is 200
+
+### Update one element.
+
+Expand the [PATCH /colores/{id}](http://localhost:18080/#/color/patch_colores__id_), click on "Try it out".
+
+Enter the number 1 in the box of parameter id and in the body of request
+
+```json
+{
+  "date": "2025-12-24"
+}
+```
+
+And click on execute. The server status code is 200
 
 ### How it works
 In docker-compose.yml 3 services are declared

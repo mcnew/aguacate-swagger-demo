@@ -15,7 +15,29 @@ $ cd aguacate-swagger-demo
 $ docker-compose up -d
 ```
 
-You can view swagger interface visiting http://localhost:18080 in a browser
+You can view swagger interface visiting [http://localhost:18080](http://localhost:18080) in a browser
+
+### Insert an element
+
+Just expand the [GET /colores/{id}](http://localhost:18080/#/color/put_colores), to see the Example Value like this:
+
+```json
+{
+  "name": "string",
+  "description": "string",
+  "date": "2019-11-24",
+  "startTime": "string",
+  "endTime": "string"
+}
+```
+
+### Field description
+
+* `name`: A string limited by the regex `^[a-zA-Z]+$`, with a minimum length of 2 and a maximum length of 10.
+* `description`: Another string limited vy regex `^[a-zA-Z 0-9]+$`, with a minimum length of 5 and a maximum length of 20.
+* `date`: A Date, the format for all the dates is `yyyy-mm-dd`, this date will be 
+* `startTime`: 
+* `endTime`: 
 
 ### How it works
 In docker-compose.yml 3 services are declared
@@ -32,6 +54,7 @@ In docker-compose.yml 3 services are declared
     PRIMARY KEY (id)
   );
   ```
+  
 - swagger: That is a [swagger-ui](https://hub.docker.com/r/swaggerapi/swagger-ui/) instance, pointing to `http://localhost:18081/colorante.yaml`
 - aguacate: An aguacate-swagger instance, with maria jdbc driver jar (mariadb-java-client) and that uses 4 files
 
@@ -48,9 +71,9 @@ In docker-compose.yml 3 services are declared
 
     Swagger auxiliar file.
 
-### Modify existing REST service
+## Modify existing REST service
 
-Objective, add a new column to /colores with method GET
+Objective, add a new column to `/colores` with method `GET` in the demo project
 
 1. Visit the swagger interface `http://localhost:18081/colorante.yaml`
 2. Check the current description of /colores as GET (http://localhost:18080/#/color/get_colores)

@@ -48,6 +48,10 @@ In docker-compose.yml 3 services are declared
 
     Swagger auxiliar file.
 
+## Add new REST service
+
+Under construction
+
 # License
 View [license information](https://www.apache.org/licenses/LICENSE-2.0) for the software contained in this image.
 

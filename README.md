@@ -59,10 +59,13 @@ Click on "Try it out" button, and replace the body with the following data
 And click on execute.
 
 Server response
-Code: 201
-Response headers: 
-    access-control-allow-origin: *
-    content-length: *
+
+    Code: 201
+
+    Response headers: 
+
+        access-control-allow-origin: *
+        content-length: *
 
 ### How it works
 In docker-compose.yml 3 services are declared

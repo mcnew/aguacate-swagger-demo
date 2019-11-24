@@ -158,10 +158,9 @@ For example using git cli
 ```shell
 $ git apply colores-description.patch
 ```
-
 Or using [TortoiseGit](https://tortoisegit.org/docs/tortoisegit/tgit-dug-patch.html)
 
-4. Refresh the definition, using the `Explore` button.
+4. Refresh the definition, using the `Explore` button on top of page.
 
 # License
 View [license information](https://www.apache.org/licenses/LICENSE-2.0) for the software contained in this image.

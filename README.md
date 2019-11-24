@@ -140,10 +140,10 @@ In docker-compose.yml 3 services are declared
 
 ## Modify existing REST service
 
-Objective, add a new column to `/colores` with method `GET` in the demo project
+Objective, add a new column (description) to `/colores` with method `GET` in the demo project
 
 1. Visit the swagger interface `http://localhost:18081/colorante.yaml`
-2. Check the current description of /colores as GET (http://localhost:18080/#/color/get_colores)
+2. Check the current description of [GET /colores](http://localhost:18080/#/color/get_colores)
     In code 200 the example value is:
 ```json
 {
@@ -152,6 +152,16 @@ Objective, add a new column to `/colores` with method `GET` in the demo project
   "date": "2019-11-24"
 }
 ```
+3. Modify the configuration file ([services/configuration/colores.json](https://github.com/mcnew/aguacate-swagger-demo/blob/master/services/configuration/colores.json)) applying the provided patch file [colores-description.patch](https://github.com/mcnew/aguacate-swagger-demo/blob/master/colores-description.patch).
+
+For example using git cli
+```shell
+$ git apply colores-description.patch
+```
+
+Or using [TortoiseGit](https://tortoisegit.org/docs/tortoisegit/tgit-dug-patch.html)
+
+4. Refresh the definition, using the `Explore` button.
 
 # License
 View [license information](https://www.apache.org/licenses/LICENSE-2.0) for the software contained in this image.

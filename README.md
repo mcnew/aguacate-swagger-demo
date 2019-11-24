@@ -17,6 +17,19 @@ $ docker-compose up -d
 
 You can view swagger interface visiting [http://localhost:18080](http://localhost:18080) in a browser
 
+### Field description
+
+* `name`: A string limited by the regex `^[a-zA-Z]+$`, with a minimum length of 2 and a maximum length of 10.
+* `description`: Another string limited vy regex `^[a-zA-Z 0-9]+$`, with a minimum length of 5 and a maximum length of 20.
+* `date`: A Date, the format for all the dates is `yyyy-mm-dd`, it will be any date in the future (from tomorrow, today + n days)
+* `startTime`: The time to start, the format is `hh:mm:ss.SSS`
+* `endTime`: The time to end, the format is `hh:mm:ss.SSS`
+
+### Business Rules
+
+* The `startTime` will be minor than `endTime`
+* The `description` will have at least one ocurrence of the name, for example if name="alpha", description can be "__alpha__ is a letter".
+
 ### Insert an element
 
 Just expand the [GET /colores/{id}](http://localhost:18080/#/color/put_colores), to see the Example Value like this:
@@ -31,13 +44,17 @@ Just expand the [GET /colores/{id}](http://localhost:18080/#/color/put_colores),
 }
 ```
 
-### Field description
+You can replace with the following data:
 
-* `name`: A string limited by the regex `^[a-zA-Z]+$`, with a minimum length of 2 and a maximum length of 10.
-* `description`: Another string limited vy regex `^[a-zA-Z 0-9]+$`, with a minimum length of 5 and a maximum length of 20.
-* `date`: A Date, the format for all the dates is `yyyy-mm-dd`, this date will be 
-* `startTime`: 
-* `endTime`: 
+```json
+{
+  "name": "alpha",
+  "description": "alpha is a letter",
+  "date": "2025-11-24",
+  "startTime": "13:00:00.000",
+  "endTime": "14:00:00.000"
+}
+```
 
 ### How it works
 In docker-compose.yml 3 services are declared

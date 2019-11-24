@@ -33,7 +33,7 @@ In docker-compose.yml 3 services are declared
   );
   ```
 - swagger: That is a [swagger-ui](https://hub.docker.com/r/swaggerapi/swagger-ui/) instance, pointing to `http://localhost:18081/colorante.yaml`
-- aguacate: An aguacate-swagger instance, with maria jdbc driver jar (mariadb-java-client) and uses 4 files
+- aguacate: An aguacate-swagger instance, with maria jdbc driver jar (mariadb-java-client) and that uses 4 files
 
   * services/configuration/colores.json
 

@@ -32,7 +32,7 @@ You can view swagger interface visiting [http://localhost:18080](http://localhos
 
 ### Insert an element
 
-Just expand the [GET /colores/{id}](http://localhost:18080/#/color/put_colores), to see the Example Value like this:
+Just expand the [PUT /colores](http://localhost:18080/#/color/put_colores), to see the Example Value like this:
 
 ```json
 {
@@ -66,6 +66,20 @@ Server response
 
         access-control-allow-origin: *
         content-length: *
+
+### List all elements
+
+Just expand the [GET /colores](http://localhost:18080/#/color/get_colores), click on "Try it out", click on execute, to get data like this
+
+```json
+[
+  {
+    "date": "2025-11-24",
+    "name": "alpha",
+    "id": "1"
+  }
+]
+```
 
 ### How it works
 In docker-compose.yml 3 services are declared

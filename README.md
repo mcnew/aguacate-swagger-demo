@@ -44,7 +44,7 @@ Just expand the [GET /colores/{id}](http://localhost:18080/#/color/put_colores),
 }
 ```
 
-You can replace with the following data:
+Click on "Try it out" button, and replace the body with the following data
 
 ```json
 {
@@ -55,6 +55,14 @@ You can replace with the following data:
   "endTime": "14:00:00.000"
 }
 ```
+
+And click on execute.
+
+Server response
+Code: 201
+Response headers: 
+    access-control-allow-origin: *
+    content-length: *
 
 ### How it works
 In docker-compose.yml 3 services are declared

@@ -15,9 +15,98 @@ $ cd aguacate-swagger-demo
 $ docker-compose up -d
 ```
 
-You can view swagger interface visiting http://localhost:18080 in a browser
+You can view swagger interface visiting [http://localhost:18080](http://localhost:18080) in a browser
 
-# How it works
+### Field description
+
+* `name`: A string limited by the regex `^[a-zA-Z]+$`, with a minimum length of 2 and a maximum length of 10.
+* `description`: Another string limited vy regex `^[a-zA-Z 0-9]+$`, with a minimum length of 5 and a maximum length of 20.
+* `date`: A Date, the format for all the dates is `yyyy-mm-dd`, it will be any date in the future (from tomorrow, today + n days)
+* `startTime`: The time to start, the format is `hh:mm:ss.SSS`
+* `endTime`: The time to end, the format is `hh:mm:ss.SSS`
+
+### Business Rules
+
+* The `startTime` will be minor than `endTime`
+* The `description` will have at least one ocurrence of the name, for example if name="alpha", description can be "__alpha__ is a letter".
+
+### Insert an element
+
+Just expand the [PUT /colores](http://localhost:18080/#/color/put_colores), to see the Example Value like this:
+
+```json
+{
+  "name": "string",
+  "description": "string",
+  "date": "2019-11-24",
+  "startTime": "string",
+  "endTime": "string"
+}
+```
+
+Click on "Try it out" button, and replace the body with the following data
+
+```json
+{
+  "name": "alpha",
+  "description": "alpha is a letter",
+  "date": "2025-11-24",
+  "startTime": "13:00:00.000",
+  "endTime": "14:00:00.000"
+}
+```
+
+And click on execute. The server status code is 201
+
+### List all elements
+
+Expand the [GET /colores](http://localhost:18080/#/color/get_colores), click on "Try it out", click on execute, to get data like this
+
+```json
+[
+  {
+    "date": "2025-11-24",
+    "name": "alpha",
+    "id": "1"
+  }
+]
+```
+
+And click on execute. The server status code is 200
+
+### Get all the data from one element
+
+Expand the [GET /colores/{id}](http://localhost:18080/#/color/get_colores__id_), click on "Try it out".
+
+Enter the number 1 in the box of parameter id and click on execute.
+
+```json
+{
+  "date": "2025-11-24",
+  "name": "alpha",
+  "description": "alpha is a letter",
+  "startTime": "13:00:00.000",
+  "endTime": "14:00:00.000"
+}
+```
+
+And click on execute. The server status code is 200
+
+### Update one element.
+
+Expand the [PATCH /colores/{id}](http://localhost:18080/#/color/patch_colores__id_), click on "Try it out".
+
+Enter the number 1 in the box of parameter id and in the body of request
+
+```json
+{
+  "date": "2025-12-24"
+}
+```
+
+And click on execute. The server status code is 200
+
+### How it works
 In docker-compose.yml 3 services are declared
 
 - db: That is a [mariadb](https://hub.docker.com/_/mariadb) instance, with just one table on the `cenicienta` schema:
@@ -32,8 +121,9 @@ In docker-compose.yml 3 services are declared
     PRIMARY KEY (id)
   );
   ```
+  
 - swagger: That is a [swagger-ui](https://hub.docker.com/r/swaggerapi/swagger-ui/) instance, pointing to `http://localhost:18081/colorante.yaml`
-- aguacate: An aguacate-swagger instance, with maria jdbc driver jar (mariadb-java-client) and uses 4 files
+- aguacate: An aguacate-swagger instance, with maria jdbc driver jar (mariadb-java-client) and that uses 4 files
 
   * services/configuration/colores.json
 
@@ -47,6 +137,41 @@ In docker-compose.yml 3 services are declared
   * services/swagger/colorante.json
 
     Swagger auxiliar file.
+
+## Modify existing REST service without restart
+
+Objective, add a new column (description) to `/colores` with method `GET` in the demo project
+
+1. Visit the swagger interface `http://localhost:18081/colorante.yaml`
+2. Check the current description of [GET /colores](http://localhost:18080/#/color/get_colores)
+    In code 200 the example value is:
+```json
+{
+  "id": 0,
+  "name": "string",
+  "date": "2019-11-24"
+}
+```
+3. Modify the configuration file ([services/configuration/colores.json](https://github.com/mcnew/aguacate-swagger-demo/blob/master/services/configuration/colores.json)) applying the provided patch file [colores-description.patch](https://github.com/mcnew/aguacate-swagger-demo/blob/master/colores-description.patch).
+
+For example using git cli
+```shell
+$ git apply colores-description.patch
+```
+Or using [TortoiseGit](https://tortoisegit.org/docs/tortoisegit/tgit-dug-patch.html)
+
+4. The internal definition will be update automatically
+5. Refresh the swagger-ui page, using the `Explore` in the browser page.
+6. See the modified version of [GET /colores](http://localhost:18080/#/color/get_colores), now with the new column
+```json
+{
+  "id": 0,
+  "name": "string",
+  "date": "2019-11-24",
+  "description": "string"
+}
+```
+7. Execute [GET /colores](http://localhost:18080/#/color/get_colores) and see the result.
 
 # License
 View [license information](https://www.apache.org/licenses/LICENSE-2.0) for the software contained in this image.

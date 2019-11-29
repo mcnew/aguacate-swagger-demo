@@ -173,6 +173,14 @@ Or using [TortoiseGit](https://tortoisegit.org/docs/tortoisegit/tgit-dug-patch.h
 ```
 7. Execute [GET /colores](http://localhost:18080/#/color/get_colores) and see the result.
 
+## Add new REST service without restart
+
+Objetive:
+
+Deploy a new REST service at path 
+
+1. 
+
 # License
 View [license information](https://www.apache.org/licenses/LICENSE-2.0) for the software contained in this image.
 

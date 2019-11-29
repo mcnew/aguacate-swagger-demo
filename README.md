@@ -138,7 +138,7 @@ In docker-compose.yml 3 services are declared
 
     Swagger auxiliar file.
 
-## Modify existing REST service
+## Modify existing REST service without restart
 
 Objective, add a new column (description) to `/colores` with method `GET` in the demo project
 
@@ -160,8 +160,9 @@ $ git apply colores-description.patch
 ```
 Or using [TortoiseGit](https://tortoisegit.org/docs/tortoisegit/tgit-dug-patch.html)
 
-4. Refresh the definition, using the `Explore` button on top of page.
-5. See the modified version of [GET /colores](http://localhost:18080/#/color/get_colores), now with the new definition
+4. The internal definition will be update automatically
+5. Refresh the swagger-ui page, using the `Explore` in the browser page.
+6. See the modified version of [GET /colores](http://localhost:18080/#/color/get_colores), now with the new column
 ```json
 {
   "id": 0,
@@ -170,7 +171,7 @@ Or using [TortoiseGit](https://tortoisegit.org/docs/tortoisegit/tgit-dug-patch.h
   "description": "string"
 }
 ```
-6. See the result executing the Operation.
+7. Execute [GET /colores](http://localhost:18080/#/color/get_colores) and see the result.
 
 # License
 View [license information](https://www.apache.org/licenses/LICENSE-2.0) for the software contained in this image.

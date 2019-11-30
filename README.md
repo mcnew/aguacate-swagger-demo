@@ -8,7 +8,7 @@
   * 18080
   * 18081 
 
-## Run demo
+## Stop-Remove demo
 ```shell
 $ docker-compose down -v
 ```

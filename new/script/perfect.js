@@ -39,8 +39,6 @@
 						message : 'Invalid code'
 					};
 				}
-				print(digit);
-				print(calc);
 				if(digit === calc) {
 					return {
 						value : 'success'

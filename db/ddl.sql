@@ -1,10 +1,17 @@
 CREATE TABLE `cenicienta`.`color` (
-	  `id` int(11) NOT NULL AUTO_INCREMENT,
-	  `name` varchar(50),
-	  `description` varchar(100),
-	  `date` date,
-	  `startTime` time,
-	  `endTime` time,
-	  PRIMARY KEY (`id`)
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(50),
+  `description` VARCHAR(100),
+  `date` DATE,
+  `startTime` TIME,
+  `endTime` TIME,
+  PRIMARY KEY (`id`)
 );
 
+CREATE TABLE `cenicienta`.`perfect` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `code` VARCHAR(12) NOT NULL,
+  `value` VARCHAR(12) NOT NULL,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+);

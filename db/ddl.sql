@@ -10,8 +10,8 @@ CREATE TABLE `cenicienta`.`color` (
 
 CREATE TABLE `cenicienta`.`perfect` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `code` VARCHAR(12) NOT NULL,
-  `value` VARCHAR(35) NOT NULL,
+  `code` VARCHAR(6) NOT NULL,
+  `value` VARCHAR(20) NOT NULL,
   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 );

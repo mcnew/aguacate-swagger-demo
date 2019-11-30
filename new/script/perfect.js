@@ -1,16 +1,17 @@
 "use strict";
 (function() {
 	
-	function digit(var int) {
+	function calcDigit(int) {
 		var sum = 0;
+		var length = int.length;
 		for (var i = 0; i < length-1; i++) {
-			sum += parseInt(str.charAt(i));
+			sum += parseInt(int.charAt(i));
 		}
 		var sSum = sum.toString();
 		if(sSum.length === 1) {
 			return sSum;
 		} else {
-			return digit(sSum);
+			return calcDigit(sSum);
 		}
 	}
 	
@@ -18,7 +19,7 @@
 		validateCode : function(code) {
 			if (code === null || code.length === 0) {
 				return {
-					message : 'Missing code';
+					message : 'Missing code'
 				};
 			} else {
 				var length = code.length;
@@ -27,20 +28,26 @@
 				switch (length) {
 				case 5:
 					digit = code.substring(length - 1);
-					calc = digit(parseInt(code.substring(0, length-1), 16));
+					calc = calcDigit(parseInt(code.substring(0, length-1), 16).toString());
 					break;
 				case 6:
 					digit = code.substring(0, 1);
-					calc = digit(parseInt(code.substring(1, length), 16));
+					calc = calcDigit(parseInt(code.substring(1, length), 16).toString());
 					break;
+				default:
+					return {
+						message : 'Invalid code'
+					};
 				}
+				print(digit);
+				print(calc);
 				if(digit === calc) {
 					return {
-						value : 'success';
+						value : 'success'
 					};
 				} else {
 					return {
-						message : 'Invalid digit';
+						message : 'Invalid digit'
 					};
 				}
 			}

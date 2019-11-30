@@ -50,18 +50,16 @@
 	},
 	"validations": [
 		{
-			"name": "NAME_DESCRIPTION",
-			"message": "description validation",
+			"name": "DIGIT_VALIDATION",
+			"message": "Digit validation",
 			"type": "SCRIPT",
-			"scriptName": "colores1",
-			"functionName": "validation1",
+			"scriptName": "perfect",
+			"functionName": "validateCode",
 			"parameters": [
-				"name",
-				"description"
+				"code"
 			],
 			"methods": [
-				"PUT",
-				"PATCH"
+				"PUT"
 			]
 		}
 	],

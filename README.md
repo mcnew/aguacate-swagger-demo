@@ -10,6 +10,11 @@
 
 ## Run demo
 ```shell
+$ docker-compose down -v
+```
+
+## Run demo
+```shell
 $ git clone https://github.com/mcnew/aguacate-swagger-demo.git aguacate-swagger-demo
 $ cd aguacate-swagger-demo
 $ docker-compose up -d

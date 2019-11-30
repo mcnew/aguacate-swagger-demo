@@ -143,6 +143,15 @@ In docker-compose.yml 3 services are declared
 
     Swagger auxiliar file.
 
+## Add new REST service without restart
+
+Objetive: Deploy a new REST service using the path [/ideal](http://localhost:18081/ideal)
+
+Prerequisites: Check if the service is already deployed, visiting the path [/ideal](http://localhost:18081/ideal) and getting a 404 error.
+
+1. Copy the file new/configuration/ideal.json to services/configuration in the aguacate-swagger-demo.
+2. 
+
 ## Modify existing REST service without restart
 
 Objective, add a new column (description) to `/colores` with method `GET` in the demo project
@@ -177,14 +186,6 @@ Or using [TortoiseGit](https://tortoisegit.org/docs/tortoisegit/tgit-dug-patch.h
 }
 ```
 7. Execute [GET /colores](http://localhost:18080/#/color/get_colores) and see the result.
-
-## Add new REST service without restart
-
-Objetive:
-
-Deploy a new REST service at path 
-
-1. 
 
 # License
 View [license information](https://www.apache.org/licenses/LICENSE-2.0) for the software contained in this image.

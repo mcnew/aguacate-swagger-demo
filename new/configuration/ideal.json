@@ -1,7 +1,27 @@
 {
-	"primary": "code",
+	"primary": "id",
 	"datasource": "laser",
 	"fields": {
+		"id": {
+			"type": "INTEGER",
+			"minval": "1",
+			"maxval": "2147483647",
+			"input": {
+				"GET": {
+					"mandatory": true
+				},
+				"PATCH": {
+					"mandatory": true
+				},
+				"DELETE": {
+					"mandatory": true
+				}
+			},
+			"output": [
+				"GET",
+				"GET0"
+			]
+		},
 		"code": {
 			"type": "STRING",
 			"minlen": "3",
@@ -39,7 +59,6 @@
 			"type": "DATETIME",
 			"minval": "2019-01-01T00:00:00.000",
 			"maxval": "2040-12-31T23:59:59.999",
-			"regex": "^[a-zA-Z ]+$",
 			"input": {
 				
 			},

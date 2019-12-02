@@ -8,6 +8,11 @@
   * 18080
   * 18081 
 
+## Stop-Remove demo
+```shell
+$ docker-compose down -v
+```
+
 ## Run demo
 ```shell
 $ git clone https://github.com/mcnew/aguacate-swagger-demo.git aguacate-swagger-demo
@@ -137,6 +142,30 @@ In docker-compose.yml 3 services are declared
   * services/swagger/colorante.json
 
     Swagger auxiliar file.
+
+## Add new REST service without restart
+
+Objetive: Deploy a new REST service using the path [/ideal](http://localhost:18081/ideal)
+
+Prerequisites: Check if the service is already deployed, visiting the path [/ideal](http://localhost:18081/ideal) and getting a 404 error.
+
+1. Copy the script file new/script/perfect.js to services/script in the aguacate-swagger-demo
+```shell
+    $ ### Assuming to be in the "avocado-swagger-demo" directory & using UNIX like
+    $ cp new/script/perfect.js services/script/
+```
+2. Copy the file new/configuration/ideal.json to services/configuration in the aguacate-swagger-demo.
+```shell
+    $ ### Assuming to be in the "avocado-swagger-demo" directory & using UNIX like
+    $ cp new/configuration/ideal.json services/configuration/
+```
+3. Browse again [/ideal](http://localhost:18081/ideal) & you see something like
+```json
+[{"code":"89ed1","id":"1","value":"Lorem ipsum dolor"},{"code":"29ef50","id":"2","value":"Curabitur pretium"}]
+```
+Explanation:
+
+    This service implements a CRUD interface with the table `cenicienta`.`perfect`. This table has already data (see [db/ddl.sql](db/ddl.sql) & [db/dml.sql](db/dml.sql), you can access this data using the cli in the db service, declared in the docker-compose.yml file.
 
 ## Modify existing REST service without restart
 

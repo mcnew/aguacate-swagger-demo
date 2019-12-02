@@ -1,0 +1,148 @@
+{
+	"primary": "id",
+	"datasource": "laser",
+	"fields": {
+		"id": {
+			"type": "INTEGER",
+			"minval": "1",
+			"maxval": "2147483647",
+			"input": {
+				"GET": {
+					"mandatory": true
+				},
+				"PATCH": {
+					"mandatory": true
+				},
+				"DELETE": {
+					"mandatory": true
+				}
+			},
+			"output": [
+				"GET",
+				"GET0"
+			]
+		},
+		"code": {
+			"type": "STRING",
+			"minlen": "3",
+			"maxlen": "6",
+			"regex": "^[A-Z0-8]+$",
+			"input": {
+				"PUT": {
+					"mandatory": true
+				}
+			},
+			"output": [
+				"GET",
+				"GET0"
+			]
+		},
+		"value": {
+			"type": "STRING",
+			"minlen": "5",
+			"maxlen": "20",
+			"regex": "^[a-zA-Z ]+$",
+			"input": {
+				"PUT": {
+					"mandatory": true
+				},
+				"PATCH": {
+					"mandatory": false
+				}
+			},
+			"output": [
+				"GET",
+				"GET0"
+			]
+		},
+		"created_at": {
+			"type": "DATETIME",
+			"minval": "2019-01-01T00:00:00.000",
+			"maxval": "2040-12-31T23:59:59.999",
+			"input": {
+				
+			},
+			"output": [
+				"GET"
+			]
+		}
+	},
+	"validations": [
+		{
+			"name": "DIGIT_VALIDATION",
+			"message": "Digit validation",
+			"type": "SCRIPT",
+			"scriptName": "perfect",
+			"functionName": "validateCode",
+			"parameters": [
+				"code"
+			],
+			"methods": [
+				"PUT"
+			]
+		}
+	],
+	"sentences": [
+		{
+			"name": "NEW",
+			"type": "INSERT",
+			"message": "Insert perfect {0}",
+			"table": "perfect",
+			"required": [
+				"code",
+				"value"
+			],
+			"optional": [],
+			"methods": [
+				"PUT"
+			]
+		},
+		{
+			"name": "UPDATE",
+			"type": "UPDATE",
+			"message": "Update perfect {0}",
+			"table": "perfect",
+			"required": [
+				"id"
+			],
+			"optional": [
+				"value"
+			],
+			"methods": [
+				"PATCH"
+			]
+		},
+		{
+			"name": "SELECT_ONE",
+			"type": "SELECT_SINGLE_ROW",
+			"message": "Selection of detail's perfect {0}",
+			"table": "perfect",
+			"required": [
+				"id"
+			],
+			"optional": [
+				"code",
+				"value",
+				"created_at"
+			],
+			"methods": [
+				"GET"
+			]
+		},
+		{
+			"name": "SELECT_ALL",
+			"type": "SELECT_MULTIPLE_ROW",
+			"message": "Selection of all perfect",
+			"table": "perfect",
+			"required": [],
+			"optional": [
+				"id",
+				"code",
+				"value"
+			],
+			"methods": [
+				"GET0"
+			]
+		}
+	]
+}

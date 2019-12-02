@@ -1,0 +1,71 @@
+{
+	"kind": "swagger",
+	"spec ": "1.0.0",
+	"entities": [
+		"perfect"
+	],
+	"paths": {
+		"perfect": {
+			"": {
+				"get": {
+					"description": "Entities list",
+					"tags": [
+						"perfect"
+					]
+				},
+				"put": {
+					"description": "Create an entity",
+					"tags": [
+						"perfect"
+					]
+				}
+			},
+			"{id}": {
+				"get": {
+					"description": "Show entity info",
+					"tags": [
+						"perfect"
+					]
+				},
+				"delete": {
+					"description": "Delete an entity",
+					"tags": [
+						"perfect"
+					]
+				},
+				"patch": {
+					"description": "Update an entity",
+					"tags": [
+						"perfect"
+					]
+				}
+			}
+		}
+	},
+	"metadata": {
+		"info": {
+			"title": "Perfect demo",
+			"description": "Sample application",
+			"license": {
+				"name": "Apache 2.0",
+				"url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+			}
+		},
+		"externalDocs": {
+			"description": "Find out more about Aguacate",
+			"url": "https://sourceforge.net/projects/aguacate/"
+		},
+		"tags": [
+			{
+				"name": "perfect",
+				"description": "Perfect CRUD operations"
+			}
+		],
+		"servers": [
+			{
+				"url": "http://localhost:18081/",
+				"description": "Demo app"
+			}
+		]
+	}
+}

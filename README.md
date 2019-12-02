@@ -149,8 +149,17 @@ Objetive: Deploy a new REST service using the path [/ideal](http://localhost:180
 
 Prerequisites: Check if the service is already deployed, visiting the path [/ideal](http://localhost:18081/ideal) and getting a 404 error.
 
-1. Copy the file new/configuration/ideal.json to services/configuration in the aguacate-swagger-demo.
-2. 
+1. Copy the script file new/script/perfect.js to services/script in the aguacate-swagger-demo
+```shell
+    $ ### Assuming to be in the "avocado-swagger-demo" directory & using UNIX like
+    $ cp new/script/perfect.js services/script/
+```
+2. Copy the file new/configuration/ideal.json to services/configuration in the aguacate-swagger-demo.
+```shell
+    $ ### Assuming to be in the "avocado-swagger-demo" directory & using UNIX like
+    $ cp new/configuration/ideal.json services/configuration/
+```
+3. Browse again [/ideal](http://localhost:18081/ideal)
 
 ## Modify existing REST service without restart
 

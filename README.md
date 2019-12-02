@@ -163,6 +163,9 @@ Prerequisites: Check if the service is already deployed, visiting the path [/ide
 ```json
 [{"code":"89ed1","id":"1","value":"Lorem ipsum dolor"},{"code":"29ef50","id":"2","value":"Curabitur pretium"}]
 ```
+Explanation:
+
+    This service implements a CRUD interface with the table `cenicienta`.`perfect`. This table has already data (see [db/ddl.sql](db/ddl.sql) & [db/dml.sql](db/dml.sql), you can access this data using the cli in the db service, declared in the docker-compose.yml file.
 
 ## Modify existing REST service without restart
 

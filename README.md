@@ -159,7 +159,10 @@ Prerequisites: Check if the service is already deployed, visiting the path [/ide
     $ ### Assuming to be in the "avocado-swagger-demo" directory & using UNIX like
     $ cp new/configuration/ideal.json services/configuration/
 ```
-3. Browse again [/ideal](http://localhost:18081/ideal)
+3. Browse again [/ideal](http://localhost:18081/ideal) & you see something like
+```json
+[{"code":"89ed1","id":"1","value":"Lorem ipsum dolor"},{"code":"29ef50","id":"2","value":"Curabitur pretium"}]
+```
 
 ## Modify existing REST service without restart
 

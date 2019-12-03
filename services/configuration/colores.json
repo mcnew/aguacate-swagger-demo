@@ -1,4 +1,8 @@
 {
+	"specs": {
+		"kind": "configuration",
+		"format": "1.0"
+	},
 	"primary": "id",
 	"datasource": "laser",
 	"fields": {

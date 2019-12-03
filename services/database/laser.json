@@ -1,4 +1,9 @@
 {
+	"specs": {
+		"kind": "database",
+		"impl": "hikari",
+		"format": "1.0"
+	},
 	"vendor": "mysql",
 	"properties": {
 		"jdbcUrl": "jdbc:mariadb://db/cenicienta",

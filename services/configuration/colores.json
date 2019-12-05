@@ -16,9 +16,6 @@
 				},
 				"PATCH": {
 					"mandatory": true
-				},
-				"DELETE": {
-					"mandatory": true
 				}
 			},
 			"output": [

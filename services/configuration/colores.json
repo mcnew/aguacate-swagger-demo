@@ -74,8 +74,8 @@
 		},
 		"startTime": {
 			"type": "TIME",
-			"minval": "08:00:00.000",
-			"maxval": "20:59:59.999",
+			"minval": "08:00",
+			"maxval": "20:59",
 			"input": {
 				"PUT": {
 					"mandatory": true
@@ -90,8 +90,8 @@
 		},
 		"endTime": {
 			"type": "TIME",
-			"minval": "08:00:00.000",
-			"maxval": "20:59:59.999",
+			"minval": "08:00",
+			"maxval": "20:59",
 			"input": {
 				"PUT": {
 					"mandatory": true
@@ -102,6 +102,18 @@
 			},
 			"output": [
 				"GET"
+			]
+		},
+		"active": {
+			"type": "BOOLEAN",
+			"input": {
+				"PATCH": {
+					"mandatory": false
+				}
+			},
+			"output": [
+				"GET",
+				"GET0"
 			]
 		}
 	},
@@ -119,14 +131,34 @@
 			]
 		},
 		{
-			"name": "DATE_IN_RANGE",
-			"message": "check date int range",
-			"type": "GT_TODAY",
+			"name": "SELECT_ACTIVE",
+			"message": "ACTIVE selection",
+			"type": "SELECT_SINGLE",
+			"table": "color",
 			"parameters": [
-				"date"
+				"id"
+			],
+			"column" : "active",
+			"outputName": "original_active",
+			"methods": [
+				"PATCH"
+			]
+		},
+		{
+			"name": "ACTIVE",
+			"message": "active validation on update",
+			"type": "SCRIPT",
+			"scriptName": "colores1",
+			"functionName": "updateCheckValidation",
+			"parameters": [
+				"description",
+				"date",
+				"starTime",
+				"endTime",
+				"active"
 			],
 			"methods": [
-				"PUT"
+				"PATCH"
 			]
 		},
 		{
@@ -137,6 +169,7 @@
 			"parameters": [
 				"id"
 			],
+			"column" : "name",
 			"outputName": "name",
 			"methods": [
 				"PATCH"
@@ -146,7 +179,7 @@
 			"name": "NAME_DESCRIPTION",
 			"message": "description validation",
 			"type": "SCRIPT",
-			"scriptName" : "colores1",
+			"scriptName": "colores1",
 			"functionName": "validation1",
 			"parameters": [
 				"name",
@@ -187,8 +220,10 @@
 			],
 			"optional": [
 				"description",
+				"date",
 				"startTime",
-				"endTime"
+				"endTime",
+				"active"
 			],
 			"methods": [
 				"PATCH"
@@ -199,15 +234,18 @@
 			"type": "SELECT_SINGLE_ROW",
 			"message": "Selection of detail's color {0}",
 			"table": "color",
+			"outputName": "color",
 			"required": [
 				"id"
 			],
 			"optional": [
+				"id",
 				"name",
 				"description",
 				"date",
 				"startTime",
-				"endTime"
+				"endTime",
+				"active"
 			],
 			"methods": [
 				"GET"
@@ -218,14 +256,40 @@
 			"type": "SELECT_MULTIPLE_ROW",
 			"message": "Selection of all colors",
 			"table": "color",
+			"outputName": "colores",
 			"required": [],
 			"optional": [
 				"id",
 				"name",
-				"date"
+				"date",
+				"active"
 			],
 			"methods": [
 				"GET0"
+			]
+		},
+		{
+			"name": "RESPONSE_ALL",
+			"type": "RESPONSE",
+			"required": [
+				"colores"
+			],
+			"optional": [
+			],
+			"methods": [
+				"GET0"
+			]
+		},
+		{
+			"name": "RESPONSE_ONE",
+			"type": "RESPONSE",
+			"required": [
+				"color"
+			],
+			"optional": [
+			],
+			"methods": [
+				"GET"
 			]
 		}
 	]

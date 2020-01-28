@@ -17,6 +17,6 @@ index b500706..2d577f3 100644
  				"id",
  				"name",
 +				"description",
- 				"date"
+ 				"date",
+ 				"active"
  			],
- 			"methods": [

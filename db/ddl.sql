@@ -5,6 +5,7 @@ CREATE TABLE `cenicienta`.`color` (
   `date` DATE,
   `startTime` TIME,
   `endTime` TIME,
+  `active` BOOLEAN NOT NULL DEFAULT TRUE,
   PRIMARY KEY (`id`)
 );
 

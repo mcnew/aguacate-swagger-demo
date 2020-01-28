@@ -16,7 +16,7 @@
 			var isModification = description !== null || date !== null || starTime !== null || endTime !== null;
 			if (isModification && active !== null) {
 				return {
-					message : 'Don\'t modify active and any other attibute'
+					message : 'Don\'t modify active and any other attribute'
 				};
 			} else {
 				return {

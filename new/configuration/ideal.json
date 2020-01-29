@@ -121,6 +121,7 @@
 			"type": "SELECT_SINGLE_ROW",
 			"message": "Selection of detail's perfect {0}",
 			"table": "perfect",
+			"outputName": "perfect",
 			"required": [
 				"id"
 			],
@@ -138,6 +139,7 @@
 			"type": "SELECT_MULTIPLE_ROW",
 			"message": "Selection of all perfect",
 			"table": "perfect",
+			"outputName": "perfects",
 			"required": [],
 			"optional": [
 				"id",
@@ -146,6 +148,30 @@
 			],
 			"methods": [
 				"GET0"
+			]
+		},
+		{
+			"name": "RESPONSE_ALL",
+			"type": "RESPONSE",
+			"required": [
+				"perfects"
+			],
+			"optional": [
+			],
+			"methods": [
+				"GET0"
+			]
+		},
+		{
+			"name": "RESPONSE_ONE",
+			"type": "RESPONSE",
+			"required": [
+				"perfect"
+			],
+			"optional": [
+			],
+			"methods": [
+				"GET"
 			]
 		}
 	]

@@ -38,6 +38,8 @@ You can view swagger interface visiting [http://localhost:18080](http://localhos
 * `endTime`: The time to end, the format is `hh:mmTZ`
 * `active`: Indicative flag of active elements
 
+ `TZ`: Is time zone, for example `+00:00`, `+08:00`, `-06:00` or `Z`
+
 ### Business Rules
 
 * The `startTime` will be minor than `endTime`

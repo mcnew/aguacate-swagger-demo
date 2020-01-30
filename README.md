@@ -78,8 +78,9 @@ Expand the [GET /colores](http://localhost:18080/#/color/get_colores), click on 
 ```json
 [
   {
-    "date": "2025-11-24-00:00",
+    "date": "2025-11-24Z",
     "name": "alpha",
+    "active": true,
     "id": "1"
   }
 ]
@@ -98,8 +99,10 @@ Enter the number 1 in the box of parameter id and click on execute.
   "date": "2025-11-24",
   "name": "alpha",
   "description": "alpha is a letter",
-  "startTime": "13:00:00.000",
-  "endTime": "14:00:00.000"
+  "active": true,
+  "startTime": "19:00Z",
+  "id": 2,
+  "endTime": "20:00Z"
 }
 ```
 
@@ -113,7 +116,7 @@ Enter the number 1 in the box of parameter id and in the body of request
 
 ```json
 {
-  "date": "2025-12-24"
+  "date": "2025-12-24-06:00"
 }
 ```
 

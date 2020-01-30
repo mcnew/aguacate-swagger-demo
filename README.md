@@ -1,5 +1,11 @@
 # How to use this project
 
+## WARNING
+If you cloned previously this repository, please execute the next command, to update images with the latest version
+```shell
+$ docker-compuse build
+```
+
 ## Pre-requisites:
 - Installed software
   * docker ([Install Docker](https://docs.docker.com/install/))
@@ -17,6 +23,7 @@ $ docker-compose down -v
 ```shell
 $ git clone https://github.com/mcnew/aguacate-swagger-demo.git aguacate-swagger-demo
 $ cd aguacate-swagger-demo
+$ docker-compose build
 $ docker-compose up -d
 ```
 

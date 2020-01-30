@@ -25,7 +25,7 @@ You can view swagger interface visiting [http://localhost:18080](http://localhos
 ### Field description
 
 * `name`: A string limited by the regex `^[a-zA-Z]+$`, with a minimum length of 2 and a maximum length of 10.
-* `description`: Another string limited vy regex `^[a-zA-Z 0-9]+$`, with a minimum length of 5 and a maximum length of 20.
+* `description`: Another string limited by regex `^[a-zA-Z 0-9]+$`, with a minimum length of 5 and a maximum length of 20.
 * `date`: A Date, the format for all the dates is `yyyy-mm-dd`, it will be any date in the future (from tomorrow, today + n days)
 * `startTime`: The time to start, the format is `hh:mm:ss.SSS`
 * `endTime`: The time to end, the format is `hh:mm:ss.SSS`

@@ -167,14 +167,12 @@ Objective, add a new column (description) to `/colores` with method `GET` in the
 2. Check the current description of [GET /colores](http://localhost:18080/#/color/get_colores)
     In code 200 the example value is:
 ```json
-[
-  {
-    "date": "2025-12-24Z",
-    "name": "alpha",
-    "active": true,
-    "id": 1
-  }
-]
+{
+  "id": 0,
+  "name": "string",
+  "date": "2020-01-30",
+  "active": true
+}
 ```
 3. Modify the configuration file ([services/configuration/colores.json](https://github.com/mcnew/aguacate-swagger-demo/blob/master/services/configuration/colores.json)) applying the provided patch file [colores-description.patch](https://github.com/mcnew/aguacate-swagger-demo/blob/master/colores-description.patch).
 
@@ -188,15 +186,13 @@ Or using [TortoiseGit](https://tortoisegit.org/docs/tortoisegit/tgit-dug-patch.h
 5. Refresh the swagger-ui page, using the `Explore` in the browser page.
 6. See the modified version of [GET /colores](http://localhost:18080/#/color/get_colores), now with the new column
 ```json
-[
-  {
-    "date": "2025-12-24Z",
-    "name": "alpha",
-    "description": "alpha is a letter",
-    "active": true,
-    "id": 1
-  }
-]
+{
+  "id": 0,
+  "name": "string",
+  "description": "string",
+  "date": "2020-01-30",
+  "active": true
+}
 ```
 7. Execute [GET /colores](http://localhost:18080/#/color/get_colores) and see the result.
 

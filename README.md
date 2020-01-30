@@ -44,6 +44,8 @@ You can view swagger interface visiting [http://localhost:18080](http://localhos
 
 * The `startTime` will be minor than `endTime`
 * The `description` will have at least one ocurrence of the name, for example if name="alpha", description can be "__alpha__ is a letter".
+* You cannot update the fields of an inactive record, except for the active `field`
+* startTime and endTime should be between `08:00` and `20:59`
 
 ### Insert an element
 

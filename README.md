@@ -55,9 +55,9 @@ Click on "Try it out" button, and replace the body with the following data
 {
   "name": "alpha",
   "description": "alpha is a letter",
-  "date": "2025-11-24",
-  "startTime": "13:00:00.000",
-  "endTime": "14:00:00.000"
+  "date": "2025-11-24-06:00",
+  "startTime": "13:00-06:00",
+  "endTime": "14:00-06:00"
 }
 ```
 
@@ -70,7 +70,7 @@ Expand the [GET /colores](http://localhost:18080/#/color/get_colores), click on 
 ```json
 [
   {
-    "date": "2025-11-24",
+    "date": "2025-11-24-00:00",
     "name": "alpha",
     "id": "1"
   }

@@ -202,12 +202,12 @@ Prerequisites: Check if the service is already deployed, visiting the path [/ide
 
 1. Copy the script file new/script/perfect.js to services/script in the aguacate-swagger-demo
 ```shell
-    $ ### Assuming to be in the "avocado-swagger-demo" directory & using UNIX like
+    $ ### Assuming to be in the "aguacate-swagger-demo" directory & using UNIX like
     $ cp new/script/perfect.js services/script/
 ```
 2. Copy the file new/configuration/ideal.json to services/configuration in the aguacate-swagger-demo.
 ```shell
-    $ ### Assuming to be in the "avocado-swagger-demo" directory & using UNIX like
+    $ ### Assuming to be in the "aguacate-swagger-demo" directory & using UNIX like
     $ cp new/configuration/ideal.json services/configuration/
 ```
 3. Browse again [/ideal](http://localhost:18081/ideal) & you see something like

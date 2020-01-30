@@ -136,6 +136,7 @@ In docker-compose.yml 3 services are declared
     date date,
     startTime time,
     endTime time,
+    active BOOLEAN NOT NULL DEFAULT TRUE,
     PRIMARY KEY (id)
   );
   ```

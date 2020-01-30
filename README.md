@@ -164,7 +164,7 @@ In docker-compose.yml 3 services are declared
 Objective, add a new column (description) to `/colores` with method `GET` in the demo project
 
 1. Visit the swagger interface `http://localhost:18081/colorante.yaml`
-2. Check the current description of [GET /colores/{id}](http://localhost:18080/#/color/get_colores__id_)
+2. Check the current description of [GET /colores](http://localhost:18080/#/color/get_colores)
     In code 200 the example value is:
 ```json
 [
@@ -186,7 +186,7 @@ Or using [TortoiseGit](https://tortoisegit.org/docs/tortoisegit/tgit-dug-patch.h
 
 4. The internal definition will be update automatically
 5. Refresh the swagger-ui page, using the `Explore` in the browser page.
-6. See the modified version of [GET /colores/{id}](http://localhost:18080/#/color/get_colores__id_), now with the new column
+6. See the modified version of [GET /colores](http://localhost:18080/#/color/get_colores), now with the new column
 ```json
 [
   {

@@ -94,7 +94,7 @@ And click on execute. The server status code is 200
 
 Expand the [GET /colores/{id}](http://localhost:18080/#/color/get_colores__id_), click on "Try it out".
 
-Enter the number 1 in the box of parameter id and click on execute.
+Enter the number 1 in the box of parameter `id` and click on execute.
 
 ```json
 {

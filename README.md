@@ -33,9 +33,9 @@ You can view swagger interface visiting [http://localhost:18080](http://localhos
 
 * `name`: A string with a minimum length of 2, maximum length 10 and that must comply with the regular expression `^[a-zA-Z]+$`
 * `description`: A string with a minimum length of 5, maximum length 20 and that must comply with the regular expression `^[a-zA-Z 0-9]+$`
-* `date`: A date (see below 1)
-* `startTime`: The start time (see below 2)
-* `endTime`: The end time (see below 2)
+* `date`: A date with a minimum of tomorrow (see below 1)
+* `startTime`: The start time, should be between `08:00` and `20:59` (see below 2)
+* `endTime`: The end time, should be between `08:00` and `20:59` (see below 2)
 * `active`: Indicative flag of active elements
 
 1. The format of a date field is `dd/mm/yyyyTZ` (see below 3), for example __2020-12-31-05:00__.
@@ -47,9 +47,7 @@ You can view swagger interface visiting [http://localhost:18080](http://localhos
 * The `startTime` will be minor than `endTime`
 * The `description` must have at least one occurrence of the value of the `name` field. For example, if the name has the value "alpha", the description can be "__alpha__ is a letter".
 * You cannot update the fields of an inactive record, except for the `active` field
-* The minimum value of `date` must be the date of tomorrow
-* startTime and endTime should be between `08:00` and `20:59`
-
+ 
 ### Insert an element
 
 Just expand the [PUT /colores](http://localhost:18080/#/color/put_colores), to see the Example Value like this:

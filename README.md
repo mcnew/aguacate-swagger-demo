@@ -163,7 +163,7 @@ In docker-compose.yml 3 services are declared
 
 Objective, add a new column (description) to `/colores` with method `GET` in the demo project
 
-1. Visit the swagger interface `http://localhost:18081/colorante.yaml`
+1. Visit the swagger interface [http://localhost:18080/](http://localhost:18080/)
 2. Check the current description of [GET /colores](http://localhost:18080/#/color/get_colores)
     In code 200 the example value is:
 ```json

@@ -38,11 +38,9 @@ You can view swagger interface visiting [http://localhost:18080](http://localhos
 * `endTime`: The end time (see below \*\*) must be greather than the end time
 * `active`: Indicative flag of active elements
 
-\*: The format of a date field is `dd/mm/yyyyTZ` (see below \*\*\*), for example __2020-12-31-05:00__
-
-\*\*: The format of a time field is `hh:mmTZ` (see below \*\*\*), for example __10:25-05:00__
-
-\*\*\*: `TZ`: Is time zone, for example `+00:00`, `+08:00`, `-06:00` or `Z`
+\*: The format of a date field is `dd/mm/yyyyTZ` (see below \*\*\*), for example __2020-12-31-05:00__.
+\*\*: The format of a time field is `hh:mmTZ` (see below \*\*\*), for example __10:25-05:00__.
+\*\*\*: `TZ`: Is time zone, for example `+00:00`, `+08:00`, `-06:00` or `Z`.
 
 ### Business Rules
 

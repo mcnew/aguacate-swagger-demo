@@ -33,14 +33,14 @@ You can view swagger interface visiting [http://localhost:18080](http://localhos
 
 * `name`: A string with a minimum length of 2, maximum length 10 and that must comply with the regular expression `^[a-zA-Z]+$`
 * `description`: A string with a minimum length of 5, maximum length 20 and that must comply with the regular expression `^[a-zA-Z 0-9]+$`
-* `date`: A date, with a minimum value of tomorrow (see below \*)
-* `startTime`: The start time (see below \*\*) must be less than the end time
-* `endTime`: The end time (see below \*\*) must be greather than the end time
+* `date`: A date, with a minimum value of tomorrow (see below 1)
+* `startTime`: The start time (see below 2) must be less than the end time
+* `endTime`: The end time (see below 2) must be greather than the end time
 * `active`: Indicative flag of active elements
 
-\*: The format of a date field is `dd/mm/yyyyTZ` (see below \*\*\*), for example __2020-12-31-05:00__.
-\*\*: The format of a time field is `hh:mmTZ` (see below \*\*\*), for example __10:25-05:00__.
-\*\*\*: `TZ`: Is time zone, for example `+00:00`, `+08:00`, `-06:00` or `Z`.
+1. The format of a date field is `dd/mm/yyyyTZ` (see below 3), for example __2020-12-31-05:00__.
+2. The format of a time field is `hh:mmTZ` (see below 3), for example __10:25-05:00__.
+3. `TZ`: Is time zone, for example `+00:00`, `+08:00`, `-06:00` or `Z`.
 
 ### Business Rules
 

@@ -1,18 +1,18 @@
 # How to use this project
 
 ## WARNING
-If you cloned previously this repository, please execute the next command, to update images with the latest version
+If you cloned this repository before, build the images again
 ```shell
 $ docker-compuse build
 ```
 
 ## Pre-requisites:
-- Installed software
+- Software
   * docker ([Install Docker](https://docs.docker.com/install/))
   * docker-compose ([Install Docker Compose](https://docs.docker.com/compose/install))
-- Available ports on localhost
+- Ports at localhost
   * 18080
-  * 18081 
+  * 18081
 
 ## Stop-Remove demo
 ```shell

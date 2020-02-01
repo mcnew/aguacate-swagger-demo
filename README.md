@@ -92,7 +92,7 @@ Expand the [GET /colores](http://localhost:18080/#/color/get_colores), click on 
 
 And click on execute. The server status code is 200
 
-### Get all the data from one element
+### Get data from one element
 
 Expand the [GET /colores/{id}](http://localhost:18080/#/color/get_colores__id_), click on "Try it out".
 

@@ -160,7 +160,9 @@ In docker-compose.yml 3 services are declared
 
     Swagger auxiliar file.
 
-## Modify existing REST service without restart [video](https://www.youtube.com/watch?v=0BcuYHIGxg8)
+## Modify existing REST service without restart
+
+([video])(https://www.youtube.com/watch?v=0BcuYHIGxg8)
 
 Objective, add a new column (description) to `/colores` with method `GET` in the demo project
 

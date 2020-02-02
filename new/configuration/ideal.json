@@ -28,9 +28,9 @@
 		},
 		"code": {
 			"type": "STRING",
-			"minlen": "3",
+			"minlen": "5",
 			"maxlen": "6",
-			"regex": "^[A-Z0-8]+$",
+			"regex": "^[0-9]+$",
 			"input": {
 				"PUT": {
 					"mandatory": true

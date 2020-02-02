@@ -28,11 +28,11 @@
 				switch (length) {
 				case 5:
 					digit = code.substring(length - 1);
-					calc = calcDigit(parseInt(code.substring(0, length-1), 16).toString());
+					calc = calcDigit(code.substring(0, length-1).toString());
 					break;
 				case 6:
 					digit = code.substring(0, 1);
-					calc = calcDigit(parseInt(code.substring(1, length), 16).toString());
+					calc = calcDigit(code.substring(1, length).toString());
 					break;
 				default:
 					return {

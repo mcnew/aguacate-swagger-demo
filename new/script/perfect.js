@@ -4,7 +4,7 @@
 	function calcDigit(int) {
 		var sum = 0;
 		var length = int.length;
-		for (var i = 0; i < length-1; i++) {
+		for (var i = 0; i < length; i++) {
 			sum += parseInt(int.charAt(i));
 		}
 		var sSum = sum.toString();

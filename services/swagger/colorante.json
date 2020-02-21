@@ -1,7 +1,7 @@
 {
 	"kind": "swagger",
 	"spec ": "1.0.0",
-	"entities": [
+	"configurations": [
 		"colores"
 	],
 	"paths": {

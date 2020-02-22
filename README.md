@@ -162,7 +162,7 @@ In docker-compose.yml 3 services are declared
 
 ## Modify existing REST service without restart
 
-[video](https://www.youtube.com/watch?v=0BcuYHIGxg8)
+[video](https://www.youtube.com/watch?v=WBrEmeT2J-8)
 
 Objective, add a new column (description) to `/colores` with method `GET` in the demo project
 
@@ -200,6 +200,8 @@ Or using [TortoiseGit](https://tortoisegit.org/docs/tortoisegit/tgit-dug-patch.h
 7. Execute [GET /colores](http://localhost:18080/#/color/get_colores) and see the result.
 
 ## Add new REST service without restart
+
+[Video](https://www.youtube.com/watch?v=HnibfIoj3bU)
 
 Objetive: Deploy a new REST service using the path [/ideal](http://localhost:18081/ideal)
 

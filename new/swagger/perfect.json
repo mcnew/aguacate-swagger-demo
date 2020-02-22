@@ -5,7 +5,7 @@
 		"ideal"
 	],
 	"paths": {
-		"perfect": {
+		"ideal": {
 			"": {
 				"get": {
 					"description": "Entities list",

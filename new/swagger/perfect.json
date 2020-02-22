@@ -2,7 +2,7 @@
 	"kind": "swagger",
 	"spec ": "1.0.0",
 	"configurations": [
-		"perfect"
+		"ideal"
 	],
 	"paths": {
 		"perfect": {

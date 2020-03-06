@@ -151,6 +151,7 @@
 			"scriptName": "colores1",
 			"functionName": "updateCheckValidation",
 			"parameters": [
+				"original_active",
 				"description",
 				"date",
 				"starTime",

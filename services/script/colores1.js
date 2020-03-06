@@ -7,17 +7,29 @@
 					value : 'success'
 				};
 			} else {
-				return {
-					message : 'The description does not contain the name'
+				return { 
+					message : 'The description must contain the name'
 				};
 			}
 		},
-		updateCheckValidation : function(description, date, starTime, endTime, active) {
+		updateCheckValidation : function(originalActive, description, date, starTime, endTime, active) {
 			var isModification = description !== null || date !== null || starTime !== null || endTime !== null;
-			if (isModification && active !== null) {
-				return {
-					message : 'Don\'t modify active and any other attribute'
-				};
+			if (isModification) {
+				if (active !== null) {
+					return {
+						message : 'Cannot modify the active attribute together with other attributes'
+					};
+				} else {
+					if (originalActive) {
+						return {
+							value : 'success'
+						};
+					} else {
+						return {
+							message : 'Cannot modify attributes of an inactive element'
+						};
+					}
+				}
 			} else {
 				return {
 					value : 'success'

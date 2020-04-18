@@ -132,13 +132,12 @@
 		},
 		{
 			"name": "SELECT_ACTIVE",
-			"message": "ACTIVE selection",
-			"type": "SELECT_SINGLE",
-			"table": "color",
+			"message": "active selection",
+			"type": "SQL_SELECT_SINGLE",
+			"sql": "SELECT active FROM color WHERE id = ?",
 			"parameters": [
 				"id"
 			],
-			"column" : "active",
 			"outputName": "original_active",
 			"methods": [
 				"PATCH"
@@ -165,12 +164,11 @@
 		{
 			"name": "SELECT_NAME",
 			"message": "name selection",
-			"type": "SELECT_SINGLE",
-			"table": "color",
+			"type": "SQL_SELECT_SINGLE",
+			"sql": "SELECT name FROM color WHERE id = ?",
 			"parameters": [
 				"id"
 			],
-			"column" : "name",
 			"outputName": "name",
 			"methods": [
 				"PATCH"
@@ -271,7 +269,7 @@
 		},
 		{
 			"name": "RESPONSE_ALL",
-			"type": "RESPONSE",
+			"type": "JSON_RESPONSE",
 			"required": [
 				"colores"
 			],
@@ -283,7 +281,7 @@
 		},
 		{
 			"name": "RESPONSE_ONE",
-			"type": "RESPONSE",
+			"type": "JSON_RESPONSE",
 			"required": [
 				"color"
 			],

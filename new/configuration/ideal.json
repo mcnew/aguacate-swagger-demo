@@ -123,6 +123,7 @@
 				"id"
 			],
 			"optional": [
+				"id",
 				"code",
 				"value",
 				"created_at"
@@ -149,7 +150,7 @@
 		},
 		{
 			"name": "RESPONSE_ALL",
-			"type": "RESPONSE",
+			"type": "JSON_RESPONSE",
 			"required": [
 				"perfects"
 			],
@@ -161,7 +162,7 @@
 		},
 		{
 			"name": "RESPONSE_ONE",
-			"type": "RESPONSE",
+			"type": "JSON_RESPONSE",
 			"required": [
 				"perfect"
 			],

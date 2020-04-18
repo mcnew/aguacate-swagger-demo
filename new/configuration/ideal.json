@@ -149,7 +149,7 @@
 		},
 		{
 			"name": "RESPONSE_ALL",
-			"type": "RESPONSE",
+			"type": "JSON_RESPONSE",
 			"required": [
 				"perfects"
 			],
@@ -161,7 +161,7 @@
 		},
 		{
 			"name": "RESPONSE_ONE",
-			"type": "RESPONSE",
+			"type": "JSON_RESPONSE",
 			"required": [
 				"perfect"
 			],

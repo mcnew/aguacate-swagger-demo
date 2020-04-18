@@ -123,6 +123,7 @@
 				"id"
 			],
 			"optional": [
+				"id",
 				"code",
 				"value",
 				"created_at"

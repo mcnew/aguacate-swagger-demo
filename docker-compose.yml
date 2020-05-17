@@ -21,8 +21,6 @@ services:
       - aguacate-demo
   aguacate:
     build: services
-    ports:
-      - "18081:8080"
     depends_on:
       - db
     networks:
@@ -32,5 +30,13 @@ services:
       - "./services/script:/var/lib/aguacate/script"
       - "./services/database:/var/lib/aguacate/database"
       - "./services/swagger:/var/lib/aguacate/swagger"
+  web:
+    build: web
+    ports:
+      - "18081:80"
+    depends_on:
+      - aguacate
+    networks:
+      - aguacate-demo
 networks:
   aguacate-demo:

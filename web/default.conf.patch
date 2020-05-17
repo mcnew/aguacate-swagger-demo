@@ -1,0 +1,13 @@
+9,10c9
+<         root   /usr/share/nginx/html;
+<         index  index.html index.htm;
+---
+>         proxy_pass http://aguacate:8080/
+18,20c17,19
+<     location = /50x.html {
+<         root   /usr/share/nginx/html;
+<     }
+---
+>     #location = /50x.html {
+>     #    root   /usr/share/nginx/html;
+>     #}

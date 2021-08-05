@@ -11,7 +11,7 @@ RUN cd "$AGT_HOME" \
 
 FROM tomcat:9-jdk8
 
-ENV AGT_HOME /var/lib/app/ \
+ENV AGT_HOME=/var/lib/app/ \
     DIRECTORY_DATABASE=/var/lib/aguacate/database \
     DIRECTORY_SCRIPT=/var/lib/aguacate/script \
     DIRECTORY_CONNECTOR=/var/lib/aguacate/connector \
